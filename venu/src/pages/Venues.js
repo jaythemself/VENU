@@ -39,9 +39,9 @@ const fetchRatings = async () => {
 useEffect(() => {
   fetchRatings();
 }, []);
-
 {/*End of FETCH FOR RATINGS INFORMATION*/}
-console.log(rating);
+const starRating = rating;
+
   const fetchData = async () => {
     try {
       const response = await fetch('http://localhost:8080/api/venues', {
@@ -96,6 +96,7 @@ console.log(rating);
     setFilteredVenues(filtered);
   };
 
+  console.log(starRating);
 
 
     return (
@@ -143,8 +144,7 @@ console.log(rating);
                       </strong>
                     </Link>
                     <StarRating key={'venue.id'} index={venue.id} />
-                   
-
+ 
                     <div><strong>Address:</strong> {venue.venueAddress}</div>
                     <div><strong>City:</strong> {venue.venueCity}</div>
                     <div><strong>State:</strong> {venue.venueState}</div>

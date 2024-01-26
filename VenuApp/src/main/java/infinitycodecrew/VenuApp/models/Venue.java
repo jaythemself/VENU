@@ -40,11 +40,16 @@ public class Venue extends AbstractEntity{
     private boolean elevators;
     private boolean multiLevel;
 
+    private double StarRating;
 
 
+    public double getStarRating() {
+        return StarRating;
+    }
 
-
-
+    public void setStarRating(double starRating) {
+        StarRating = starRating;
+    }
 
     public String getVenueName() {
         return venueName;
@@ -166,12 +171,12 @@ public class Venue extends AbstractEntity{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Venue venue = (Venue) o;
-        return wheelchairAccessible == venue.wheelchairAccessible && ADABathrooms == venue.ADABathrooms && ADASeating == venue.ADASeating && busStopClose == venue.busStopClose && signLanguage == venue.signLanguage && clearPathways == venue.clearPathways && descriptiveAudio == venue.descriptiveAudio && elevators == venue.elevators && multiLevel == venue.multiLevel && Objects.equals(venueName, venue.venueName) && Objects.equals(venueAddress, venue.venueAddress) && Objects.equals(venueCity, venue.venueCity) && Objects.equals(venueState, venue.venueState) && Objects.equals(venueZip, venue.venueZip);
+        return wheelchairAccessible == venue.wheelchairAccessible && ADABathrooms == venue.ADABathrooms && ADASeating == venue.ADASeating && busStopClose == venue.busStopClose && signLanguage == venue.signLanguage && clearPathways == venue.clearPathways && descriptiveAudio == venue.descriptiveAudio && elevators == venue.elevators && multiLevel == venue.multiLevel && Double.compare(StarRating, venue.StarRating) == 0 && Objects.equals(venueName, venue.venueName) && Objects.equals(venueAddress, venue.venueAddress) && Objects.equals(venueCity, venue.venueCity) && Objects.equals(venueState, venue.venueState) && Objects.equals(venueZip, venue.venueZip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), venueName, venueAddress, venueCity, venueState, venueZip, wheelchairAccessible, ADABathrooms, ADASeating, busStopClose, signLanguage, clearPathways, descriptiveAudio, elevators, multiLevel);
+        return Objects.hash(super.hashCode(), venueName, venueAddress, venueCity, venueState, venueZip, wheelchairAccessible, ADABathrooms, ADASeating, busStopClose, signLanguage, clearPathways, descriptiveAudio, elevators, multiLevel, StarRating);
     }
 
     @Override
