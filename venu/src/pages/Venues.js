@@ -42,6 +42,8 @@ useEffect(() => {
 {/*End of FETCH FOR RATINGS INFORMATION*/}
 const starRating = rating;
 
+console.log(starRating);
+
   const fetchData = async () => {
     try {
       const response = await fetch('http://localhost:8080/api/venues', {
